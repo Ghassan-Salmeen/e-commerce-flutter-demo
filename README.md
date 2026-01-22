@@ -1,4 +1,4 @@
-# 🛋️ Modern Furniture E-Commerce Suite
+# 🛋️ Decorify - Full Stack E-Commerce Solution
 
 [![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)](https://flutter.dev/)
 [![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
@@ -7,135 +7,80 @@
 
 > **🔒 Private Repository Showcase**
 >
-> This repository serves as a visual demonstration of a full-stack e-commerce ecosystem I developed. It includes a **Customer Mobile App**, an **Admin Dashboard**, and a **Custom Node.js Backend**.
+> This repository demonstrates a production-grade **E-Commerce Ecosystem** consisting of a **Customer App** (Flutter), an **Admin Dashboard** (Flutter), and a secure **Backend API** (Node.js).
 > *Source code is available upon request for technical interviews.*
 
 ---
 
-## 📱 Client Application (Flutter)
+## 📱 App Features Overview
 
-The customer-facing application allows users to browse, search, and purchase furniture with a focus on UI/UX and smooth performance.
+### 1. Immersive Onboarding 🚀
+A visual walkthrough introduces users to the app's core value propositions: stylish furniture, fast delivery, and secure payments.
+<img src="screenshots/onboarding_flow.png" width="100%" alt="Onboarding Flow">
 
-### 1. **Onboarding & Authentication** 🔐
-*A seamless entry experience featuring secure JWT authentication, social sign-ins (Google/Apple), and password recovery flows.*
+<br>
 
-<table border="0">
-  <tr>
-    <td align="center" width="33%">
-      <img src="screenshots/splash.png" width="100%" />
-      <br><b>Smart Onboarding</b>
-    </td>
-    <td align="center" width="33%">
-      <img src="screenshots/login.png" width="100%" />
-      <br><b>Secure Login</b>
-    </td>
-    <td align="center" width="33%">
-      <img src="screenshots/register.png" width="100%" />
-      <br><b>Registration</b>
-    </td>
-  </tr>
-</table>
+### 2. Secure Authentication System 🔐
+Powered by JWT (JSON Web Tokens). The system supports:
+*   Secure Login & Registration
+*   Social Authentication (Google, Facebook, Apple)
+*   Password Recovery & Guest Mode
+<img src="screenshots/auth_flow.png" width="100%" alt="Auth Flow">
 
-### 2. **Discovery & Product Details** 🛋️
-*Advanced filtering and detailed product views. Features include "New Collection" banners, horizontal category scrollers, and rich product imagery.*
+<br>
 
-<table border="0">
-  <tr>
-    <td align="center" width="33%">
-      <img src="screenshots/home.png" width="100%" />
-      <br><b>Home Dashboard</b>
-    </td>
-    <td align="center" width="33%">
-      <img src="screenshots/category.png" width="100%" />
-      <br><b>Visual Discovery</b>
-    </td>
-    <td align="center" width="33%">
-      <img src="screenshots/details.png" width="100%" />
-      <br><b>Product Specifications</b>
-    </td>
-  </tr>
-</table>
+### 3. Discovery & Advanced Filtering 🔍
+Users can explore a vast catalog with high-performance search.
+*   **Home Feed:** Dynamic banners and horizontal category scrollers.
+*   **Smart Filters:** Filter by Brand, Price Range, and Category.
+*   **Product Details:** Rich imagery, rating summaries, and variant selection.
+<img src="screenshots/discovery_flow.png" width="100%" alt="Discovery Flow">
 
-### 3. **Cart & Secure Checkout** 💳
-*Complete order lifecycle management. Users can manage cart quantities, select saved addresses, and process payments securely.*
+<br>
 
-<table border="0">
-  <tr>
-    <td align="center" width="33%">
-      <img src="screenshots/cart.png" width="100%" />
-      <br><b>Shopping Cart</b>
-    </td>
-    <td align="center" width="33%">
-      <img src="screenshots/checkout.png" width="100%" />
-      <br><b>Order Summary</b>
-    </td>
-    <td align="center" width="33%">
-      <img src="screenshots/payment.png" width="100%" />
-      <br><b>Payment Gateway</b>
-    </td>
-  </tr>
-</table>
+### 4. Cart & Checkout Lifecycle 💳
+A complete commercial flow handling the user's journey from selection to purchase.
+*   **Cart:** Real-time price updates and coupon application.
+*   **Checkout:** Address selection and order summary.
+*   **Payment:** Secure credit card integration.
+<img src="screenshots/checkout_flow.png" width="100%" alt="Checkout Flow">
 
-### 4. **User Profile & Management** ⚙️
-*A dedicated hub for users to manage their digital footprint, including shipping addresses, security settings, and order history.*
+<br>
 
-<table border="0">
-  <tr>
-    <td align="center" width="33%">
-      <img src="screenshots/profile.png" width="100%" />
-      <br><b>Profile Hub</b>
-    </td>
-    <td align="center" width="33%">
-      <img src="screenshots/address.png" width="100%" />
-      <br><b>Address Book</b>
-    </td>
-    <td align="center" width="33%">
-      <img src="screenshots/settings.png" width="100%" />
-      <br><b>App Settings</b>
-    </td>
-  </tr>
-</table>
+### 5. Profile & Account Management ⚙️
+A dedicated hub for users to manage their data.
+*   **Address Book:** CRUD operations for shipping addresses.
+*   **Settings:** App personalization and security settings.
+*   **Profile:** Order history tracking and review management.
+<img src="screenshots/profile_flow.png" width="100%" alt="Profile Flow">
 
 ---
 
-## 💻 Admin Dashboard (Flutter) 📊
+## 🏗️ Technical Architecture
 
-A separate Flutter application built for administrators to manage the business logic on the go.
+This project is built using a **Clean Architecture** approach to ensure scalability and testability.
 
-*   **Inventory Control:** Add, update, and delete products with support for variants (size, color).
-*   **Order Management:** Track order status (Processing → Shipped → Delivered).
-*   **Marketing Tools:** Create and manage discount coupons and promotional banners.
-*   **Analytics:** Visual charts displaying sales performance and revenue.
+### **Frontend (Flutter)**
+*   **State Management:** Provider / GetX for reactive UI updates.
+*   **Networking:** `Dio` client with interceptors for token management.
+*   **Storage:** `SharedPreferences` for local session caching.
+*   **UI:** Custom design system with Dark/Light mode support.
 
----
-
-## 🔙 Backend API (Node.js) ☁️
-
-The system is powered by a robust REST API built with **Express.js** and **MongoDB**.
-
-### **Key Features:**
-*   **🛡️ Security First:** Implemented `Helmet` for headers, `XSS-Clean` for sanitization, and Rate Limiting to prevent brute-force attacks.
-*   **🔑 Authorization:** Role-Based Access Control (RBAC) separating `User` and `Admin` privileges.
-*   **📦 Advanced Data Models:** Complex schemas handling Categories, Sub-categories, Brands, and Product Variants.
-*   **🖼️ Media Handling:** Image upload functionality for product galleries.
-*   **🔔 System Notifications:** Integrated notification system for order updates.
-
----
-
-## 🛠️ Tech Stack Summary
-
-| Domain | Technologies Used |
-| :--- | :--- |
-| **Mobile (Client & Admin)** | Flutter, Dart, Provider/GetX, Dio, CachedNetworkImage |
-| **Backend** | Node.js, Express.js, JWT, Bcrypt.js |
-| **Database** | MongoDB, Mongoose ODM |
-| **Tools** | Postman, Git, VS Code |
+### **Backend (Node.js & Express)**
+*   **Database:** MongoDB (Atlas) with Mongoose ODM for schema validation.
+*   **Security:**
+    *   `Helmet` (HTTP Headers)
+    *   `XSS-Clean` (Sanitization)
+    *   `Bcrypt` (Password Hashing)
+    *   `Rate Limiting` (DDoS Protection)
+*   **Admin Features:** Role-Based Access Control (RBAC) allows Admins to manage products, view sales analytics, and update order statuses via a separate Flutter Admin App.
 
 ---
 
 ### 📬 Contact
 
-If you would like to view the source code or discuss the architecture of this project, please feel free to reach out.
+If you are a recruiter or hiring manager and would like to review the code or see a live demo, please reach out:
 
-*   **Email:** [Your Email Here]
-*   **LinkedIn:** [Your LinkedIn Link Here]
+- **Email:** ghassansalmeen7@gmail.com 📧  
+- **LinkedIn:** [@Ghassan Salmeen](https://www.linkedin.com/in/ghassan-muneef-saeed-salmen-779202333/) 🐦  
+- **WhatsApp:** [Contact us on WhatsApp](https://wa.me/+917619699362) 📱 
